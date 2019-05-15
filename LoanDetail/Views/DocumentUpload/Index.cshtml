@@ -1,0 +1,123 @@
+﻿@model LoanDetail.Models.DocumentsUpload
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<h2>UploadDocuments</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <label for="file">Upload Image:</label><br />
+
+        <input type="file" name="file" id="file" /><br />
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                @*<div align="left">*@
+
+                @Html.LabelFor(c => c.IdentityProof)
+
+                @Html.DropDownListFor(c => c.IdentityProof, new List<SelectListItem>
+
+               {
+
+                       new SelectListItem() {Text = "--Select--"},
+
+                         new SelectListItem() {Text = "Adhaar", Value="0"},
+
+                         new SelectListItem() {Text = "PAN", Value="1"},
+
+                         new SelectListItem() {Text = "PassPort", Value="2"}
+
+
+               })
+
+
+
+                @Html.ValidationMessageFor(c => c.IdentityProof, "", new { @class = "text-danger" })
+
+                @*</div>*@
+            </div>
+            <div class="col-sm-2"> </div>
+            <div align="right" class="col-sm-5">
+                <input type="file" name="file" id="file" />
+            </div>
+
+        </div>
+        <div class="row">
+            <div align="left" class="col-sm-5">
+
+                @Html.LabelFor(c => c.AddressProof)
+
+                @Html.DropDownListFor(c => c.AddressProof, new List<SelectListItem>
+
+               {
+
+                       new SelectListItem() {Text = "--Select--"},
+
+                         new SelectListItem() {Text = "DrivingLicense", Value="0"},
+
+                         new SelectListItem() {Text = "RationCard", Value="1"},
+
+
+        })
+                @Html.ValidationMessageFor(c => c.AddressProof, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div align="right" class="col-sm-5">
+                <input type="file" name="file" id="file" />
+            </div>
+        </div>
+        <div class="row">
+            <div align="left" class="col-sm-5">
+
+                @Html.LabelFor(c => c.Statements)
+
+                @Html.DropDownListFor(c => c.Statements, new List<SelectListItem>
+
+               {
+
+                       new SelectListItem() {Text = "--Select--"},
+
+                         new SelectListItem() {Text = "IncomeCertificate", Value="0"},
+
+                         new SelectListItem() {Text = "Payslips", Value="1"},
+                         new SelectListItem() {Text = "IT Returns", Value="2"},
+                          new SelectListItem() {Text = "others", Value="3"},
+
+
+        })
+                @Html.ValidationMessageFor(c => c.Statements, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div align="right" class="col-sm-5">
+                <input type="file" name="file" id="file" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+
+                <input type="submit" name="btnsubmit" value="Submit" class="btn btn-primary" />
+
+            </div>
+        </div>
+
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

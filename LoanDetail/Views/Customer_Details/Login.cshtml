@@ -1,0 +1,65 @@
+﻿@model LoanDetail.Models.Customer_Details
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h1>Login</h1>
+@using (Html.BeginForm())
+
+{
+    <center>
+        <table height="250" width="500">
+            <tr>
+                <div class="form-group">
+                    <td>
+                        @Html.LabelFor(c => c.sEmail_ID)
+                    </td>
+                    <td>
+
+                        @Html.TextBoxFor(c => c.sEmail_ID, new { @class = "form-control" })
+                    </td>
+
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <td>
+                        @Html.LabelFor(c => c.sPassword)
+                    </td>
+                    <td>
+                        @Html.EditorFor(c => c.sPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="keeplogin">
+                    <td>
+                        <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                        <label for="loginkeeping">Keep me logged in</label>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Forgot Password?", // <-- Link text
+                       "Index" // <-- Action Method Name
+                       )
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group">
+                    <td>
+                        @*@Html.ActionLink("Register Here", // <-- Link text
+                            "Index" // <-- Action Method Name
+                            )*@
+                        @Html.ActionLink("Register Here", "Register", "Customer_Details", new { }, null)
+                    </td>
+                    <td>
+                        <input type="submit" name="btnsubmit" value="Sign In" class="btn btn-primary" />
+                    </td>
+
+                </div>
+            </tr>
+        </table>
+    </center>
+
+}

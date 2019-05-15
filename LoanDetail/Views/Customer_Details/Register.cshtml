@@ -1,0 +1,185 @@
+﻿@model LoanDetail.Models.Customer_Details
+@{
+    /**/
+
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register Here</h2>
+@using (Html.BeginForm())
+
+{
+
+
+    <table align="center" cellpadding="10">
+        <tr>
+
+            <div>
+                <td>
+                    @Html.LabelFor(c => c.sFirst_Name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.sFirst_Name, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(c => c.sFirst_Name, "", new { @class = "text-danger" })
+                </td>
+            </div>
+        </tr>
+        <tr>
+
+            <div>
+                <td>
+                    @Html.LabelFor(c => c.sLast_Name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.sLast_Name, new { @class = "form-control" })
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.iMobile_Number)
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.iMobile_Number, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(c => c.iMobile_Number, "", new { @class = "text-danger" })
+                </td>
+            </div>
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sEmail_ID)
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.sEmail_ID, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(c => c.sEmail_ID, "", new { @class = "text-danger" })
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sCity)
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.sCity, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(c => c.sCity, "", new { @class = "text-danger" })
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sAddress)
+                </td>
+                <td>
+                    @Html.EditorFor(c => c.sAddress, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </div>
+        </tr>
+
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sOccupation)
+                </td>
+                <td>
+                    @Html.EditorFor(c => c.sOccupation, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sGender)
+                </td>
+                <td>
+
+                    <input id="BookType" name="BookType" type="radio" value="Male">Male
+
+
+                    <input id="BookType" name="BookType" type="radio" value="Female">Female
+
+
+                    <input id="BookType" name="BookType" type="radio" value="others">others
+
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.iAccount_Number)
+                </td>
+                <td>
+                    @Html.EditorFor(c => c.iAccount_Number, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(c => c.iAccount_Number, "", new { @class = "text-danger" })
+                </td>
+            </div>
+
+        </tr>
+        @*<div class="form-group">
+                @Html.LabelFor(c => c.iBank_Id)
+                @Html.EditorFor(c => c.iBank_Id, new { htmlAttributes = new { @class = "form-control" } })
+            </div>*@
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.sUpi_Id)
+                </td>
+                <td>
+                    @Html.EditorFor(c => c.sUpi_Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(c => c.sUpi_Id, "", new { @class = "text-danger" })
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td>
+                    @Html.LabelFor(c => c.iInitial_Deposite_Amount)
+                </td>
+                <td>
+                    @Html.EditorFor(c => c.iInitial_Deposite_Amount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(c => c.iInitial_Deposite_Amount, "", new { @class = "text-danger" })
+                </td>
+            </div>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>
+
+                </p>
+            </td>
+        </tr>
+        <tr>
+
+            <div class="form-group">
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" value="Submit" class="btn btn-primary" />
+
+                    <input type="submit" name="btncancel" value="Cancel" class="btn btn-default" />
+                </td>
+            </div>
+
+        </tr>
+    </table>
+}
