@@ -255,13 +255,15 @@
     <Content Include="Views\Customer_Details\Login.cshtml" />
     <Content Include="Views\Customer_Details\Register.cshtml" />
     <Content Include="Views\EmployeeDetails\Employee.cshtml" />
+    <Content Include="Views\RiskContentUnit\Index.cshtml" />
+    <Content Include="Views\Customer_Details\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModel\" />
     <Folder Include="Views\CreditBuyer\" />
     <Folder Include="Views\CreditManager\" />
     <Folder Include="Views\EmployeeDdetails\" />
-    <Folder Include="Views\RiskContentUnit\" />
     <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>

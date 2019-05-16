@@ -1,0 +1,14 @@
+﻿@model LoanDetail.Models.Customer_Details
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+                    @Html.ActionLink(Model.sEmail_ID, "Login", "Customer_Details", new { Email=Model.sEmail_ID }, null)
+                
+
+
+

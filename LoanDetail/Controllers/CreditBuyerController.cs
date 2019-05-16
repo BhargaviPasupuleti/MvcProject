@@ -14,5 +14,6 @@ namespace LoanDetail.Controllers
         {
             return View();
         }
+
     }
 }

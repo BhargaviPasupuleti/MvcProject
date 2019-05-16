@@ -14,7 +14,7 @@ namespace LoanDetail.Models
         [Required]
         public string loan_Type { get; set; }
 
-        [Display(Name = "Intehrest %")]
+        [Display(Name = "Interest %")]
         [Required]
         public double dIntrest { get; set; }
 
