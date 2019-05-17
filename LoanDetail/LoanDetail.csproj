@@ -257,6 +257,7 @@
     <Content Include="Views\EmployeeDetails\Employee.cshtml" />
     <Content Include="Views\RiskContentUnit\Index.cshtml" />
     <Content Include="Views\Customer_Details\Index.cshtml" />
+    <Content Include="Views\EmployeeDetails\Employees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

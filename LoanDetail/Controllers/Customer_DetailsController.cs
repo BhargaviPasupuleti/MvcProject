@@ -40,15 +40,26 @@ namespace LoanDetail.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string Email,string pwd)
+        public ActionResult Login(Customer_Details customer)
         {
-           // var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
-            var customer = dbContext.customers.SingleOrDefault(c => c.sEmail_ID == Email && c.sPassword==pwd);
-            if (customer == null)
+
+
+
+            
+                var validUser = dbContext.customers.SingleOrDefault(u => u.sEmail_ID == customer.sEmail_ID && u.sPassword == customer.sPassword);
+                if (validUser != null)
+                {
+                    //FormsAuthentication.SetAuthCookie(customer.sEmail_ID, false);
+                    return RedirectToAction("Index", "Loandetail");
+                }
+            else
             {
-                return HttpNotFound();
+                //bootbox.alert("Your message here…");
+                ModelState.AddModelError("", "The username or password is invalid");
             }
-            return RedirectToAction("Index", "Loandetail");
+
+            return View(customer);
+            
         }
 
         [HttpGet]

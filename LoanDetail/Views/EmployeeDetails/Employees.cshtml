@@ -1,0 +1,37 @@
+﻿@model List<LoanDetail.Models.EmployeeDetails>
+@{
+    ViewBag.Title = "Employees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees</h2>
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Designation
+        </th>
+        
+       
+    </tr>
+    <tbody>
+       
+        
+            <tr>
+
+                <td>
+                    @Model.sEmployeeName
+                </td>
+                <td>
+                    @Model.sDesignation
+                </td>
+               
+            </tr>
+        
+    </tbody>
+</table>

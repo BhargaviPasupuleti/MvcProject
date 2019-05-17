@@ -9,8 +9,14 @@ namespace LoanDetail.Models
     {
 
         public int Id { get; set; }
+
+
         public string sEmployeeName { get; set; }
+
+
         public string sPassword { get; set; }
+
+
         public string sDesignation { get; set; }
         
 
